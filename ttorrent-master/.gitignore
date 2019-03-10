@@ -1,0 +1,25 @@
+# Git ignore patterns
+# Author: Maxime Petazzoni <mpetazzoni@turn.com>
+
+# Ignore build output
+/build/*
+*/build
+
+# Ignore Javadoc output
+/doc/*
+
+# Ignore any eventual Eclipse project files, these don't belong in the
+# repository.
+/.classpath
+/.project
+/.settings
+/.idea/workspace.xml
+# Ignore common editor swap files
+*.swp
+*.bak
+*~
+*~
+
+#ignore idea workspace file and idea module files
+*.iml
+.idea/workspace.xml
