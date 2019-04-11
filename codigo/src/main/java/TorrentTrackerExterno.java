@@ -29,13 +29,12 @@ import com.turn.ttorrent.client.SharedTorrent;
 import com.turn.ttorrent.tracker.TrackedTorrent;
 import com.turn.ttorrent.tracker.Tracker;
 
-public class Torrent {
+public class TorrentTrackerExterno {
 	
 	
 	public static void main(String[] args) throws Exception {
 		
-		URI announceURI = new URI("http://localhost:6969/announce");
-	    String createdBy = "Sara";
+		URI announceURI = new URI("udp://tracker.openbittorrent.com:80/announce");
 //		TorrentMetadata t = TorrentCreator.create(new File("C:/Users/Sara pc/Pictures/fiesta 20/FOTO.jpg"), announceURI, createdBy);
 //		File torrentFile = new File("C:/Users/Sara pc/Pictures/fiesta 20/FOTO.torrent");
 //		saveTorrent(t,torrentFile);
@@ -43,10 +42,10 @@ public class Torrent {
 	    
 
 	    TorrentMetadata metadata = new MetadataBuilder()
-	            .addFile(new File("./archivos/archivos/prueba.jpg"))
-	            .setTracker("http://0.0.0.0:6969/announce")
+	            .addFile(new File("C:/Users/Profesor/Documents/prueba.pdf"))
+	            .setTracker("udp://tracker.openbittorrent.com:80/announce")
 	            .build();
-	    saveTorrent(metadata,new File("./archivos/torrents/prueba.torrent"));
+	    saveTorrent(metadata,new File("C:/Users/Profesor/Documents/monitoria/nueva/torrents/prueba.torrent"));
 	   
 	}
 	

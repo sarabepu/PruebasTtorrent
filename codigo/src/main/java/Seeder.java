@@ -7,7 +7,7 @@ import org.apache.log4j.BasicConfigurator;
 
 import com.turn.ttorrent.client.SimpleClient;
 
-public class Cliente {
+public class Seeder {
 
 	public static void main(String[] args) throws Exception {
 
@@ -18,19 +18,14 @@ public class Cliente {
 
 		Inet4Address iPv4Address = (Inet4Address) localhost;
 		File torrentFile = new File("./archivos/torrents/nuevo.torrent");
-		File outputFile = new File("./archivos/nuevosarchivos");
+		File outputFile = new File("./archivos/downloads");
 
-		Date date= new Date();
 
-		long timeI = date.getTime();
 		client.downloadTorrent(
 				torrentFile.getAbsolutePath(),
 				outputFile.getAbsolutePath(),
 				iPv4Address);
-		Date dateF= new Date();
 
-		long timeF = dateF.getTime();
-		System.out.println("El tiempo fue:"+ (timeF-timeI));
 
 	}
 }

@@ -1,6 +1,6 @@
 package com.turn.ttorrent.client.network;
 
-import com.turn.ttorrent.TempFiles; 
+import com.turn.ttorrent.TempFiles;
 import com.turn.ttorrent.Utils;
 import com.turn.ttorrent.client.*;
 import com.turn.ttorrent.client.peer.PeerActivityListener;
