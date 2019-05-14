@@ -32,7 +32,7 @@ public class Seeder {
 		{
 		
 			Inet4Address iPv4Address = (Inet4Address) localhost;
-			File torrentFile = new File("./archivos/torrents/ultimoexterno.torrent");
+			File torrentFile = new File("./archivos/torrents/local.torrent");
 			File outputFile = new File("./archivos/archivos");
 
 

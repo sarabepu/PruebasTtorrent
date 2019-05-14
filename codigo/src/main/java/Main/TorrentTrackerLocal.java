@@ -51,7 +51,7 @@ public class TorrentTrackerLocal {
 		catch(ArrayIndexOutOfBoundsException e)
 		{
 			  TorrentMetadata metadata = new MetadataBuilder()
-			            .addFile(new File("./archivos/archivos/ubuntu.exe"))
+			            .addFile(new File("./archivos/archivos/prueba.jpg"))
 			            .setTracker("http://0.0.0.0:6969/announce")
 			            .build();
 			    saveTorrent(metadata,new File("./archivos/torrents/ultimo.torrent"));
