@@ -11,7 +11,11 @@ import java.util.Date;
 import org.apache.log4j.BasicConfigurator;
 
 import com.turn.ttorrent.client.SimpleClient;
-
+/**
+ * Clase para probar localmente la descarga de un torrent en la carpeta nuevosArchivos2
+ * @author Sara María Bejarano
+ *
+ */
 public class Cliente2 {
 
 	static SimpleClient client = new SimpleClient();
@@ -65,10 +69,7 @@ public class Cliente2 {
 		long timeF = dateF.getTime();
 
 		String str = "Test #: "+numTest+" Fecha: "+date+" Cliente: "+ localhost.getHostAddress()+" demoro "+(timeF-timeI);
-//		File arch= new File("./logs/log_"+torrentFile.getName()+"_"+localhost.getHostAddress()+".txt");
-//		BufferedWriter writer = new BufferedWriter(new FileWriter(arch.getName(), true));
-//		writer.append(str+"\n");
-//		writer.close();
+
 		System.err.println("El tiempo fue:"+ (timeF-timeI));
 
 		outToServer.println(str);
