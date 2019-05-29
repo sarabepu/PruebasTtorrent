@@ -12,7 +12,7 @@ import org.apache.log4j.BasicConfigurator;
 
 import com.turn.ttorrent.client.SimpleClient;
 
-public class Cliente {
+public class Cliente2 {
 
 	static SimpleClient client = new SimpleClient();
 	public static void main(String[] args) throws Exception {
@@ -38,7 +38,7 @@ public class Cliente {
 		{
 
 			File torrentFile = new File("./archivos/torrents/local.torrent");
-			File outputFile = new File("./archivos/nuevosarchivos2");
+			File outputFile = new File("./archivos/nuevosarchivos");
 
 			descargarTorrent(torrentFile, outputFile, localhost, iPv4Address, "localhost");
 		}
@@ -56,18 +56,15 @@ public class Cliente {
 		Date date= new Date();
 
 		long timeI = date.getTime();
-		try
-		{
 		client.downloadTorrent(
 				torrentFile.getAbsolutePath(),
 				outputFile.getAbsolutePath(),
 				iPv4Address);
-		
 		Date dateF= new Date();
 
 		long timeF = dateF.getTime();
 
-		String str = "Test #: "+numTest+" Fecha: "+dateF+" Cliente: "+ localhost.getHostAddress()+" demoro "+(timeF-timeI);
+		String str = "Test #: "+numTest+" Fecha: "+date+" Cliente: "+ localhost.getHostAddress()+" demoro "+(timeF-timeI);
 //		File arch= new File("./logs/log_"+torrentFile.getName()+"_"+localhost.getHostAddress()+".txt");
 //		BufferedWriter writer = new BufferedWriter(new FileWriter(arch.getName(), true));
 //		writer.append(str+"\n");
@@ -75,13 +72,6 @@ public class Cliente {
 		System.err.println("El tiempo fue:"+ (timeF-timeI));
 
 		outToServer.println(str);
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-			client.stop();
-			vaciarCarpeta(outputFile);
-		}
 		
 		String received= inFromServer.readLine();
 		if(received.equals("end"))
